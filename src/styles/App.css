@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  height: 100%;
+  background-color: hsl(226, 43%, 10%);
+  padding: 30px 0;
+}
+
+.content {
+  width: 70%;
+  height: 470px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+.user-box {
+  background-color: hsl(235, 46%, 20%);
+  color: hsl(255, 100%, 100%);
+  grid-row: 1/3;
+  border-radius: 15px;
+}
+.user-box__user {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+  padding: 25px;
+}
+.user-box__user .avatar {
+  width: 80px;
+  height: 80px;
+  border: 2px solid hsl(255, 100%, 100%);
+  border-radius: 50%;
+  margin-bottom: 35px;
+}
+.user-box__user .avatar img {
+  width: 100%;
+}
+.user-box__user .report-name {
+  display: flex;
+  flex-direction: column;
+}
+.user-box__user .report-name span:not(.name) {
+  color: hsl(236, 100%, 87%);
+  margin-bottom: 10px;
+}
+.user-box__user .report-name .name {
+  font-size: 40px;
+  font-weight: 300;
+}
+.user-box__timeframes {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.user-box__timeframes .timeframe {
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: hsl(236, 100%, 87%);
+}
+.user-box__timeframes .timeframe:hover {
+  cursor: pointer;
+}
+.user-box__timeframes .selected {
+  color: hsl(255, 100%, 100%);
+}
+
+.activity-box {
+  display: flex;
+  background-color: hsl(255, 100%, 100%);
+  align-items: flex-end;
+  border-radius: 15px;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+}
+.activity-box img:not(.ellipsis) {
+  position: relative;
+  z-index: -1;
+  bottom: 72%;
+  left: 65%;
+}
+.activity-box__board {
+  background-color: hsl(235, 46%, 20%);
+  color: hsl(255, 100%, 100%);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  border-radius: 10px;
+  padding: 25px;
+}
+.activity-box__board:hover {
+  cursor: pointer;
+  background-color: hsl(236, 41%, 34%);
+}
+.activity-box__board .title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.activity-box__board .ellipsis {
+  margin-left: auto;
+}
+.activity-box__board .ellipsis:hover {
+  cursor: pointer;
+  content: url("/public/images/icon-ellipsis-hover.svg");
+}
+.activity-box__board .time {
+  display: flex;
+  flex-direction: column;
+}
+.activity-box__board .time .current {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.activity-box__board .time .previous {
+  font-size: 14px;
+  color: hsl(236, 100%, 87%);
+}
+.activity-box--work {
+  background-color: hsl(15, 100%, 70%);
+}
+.activity-box--play {
+  background-color: hsl(195, 74%, 62%);
+}
+.activity-box--study {
+  background-color: hsl(348, 100%, 68%);
+}
+.activity-box--exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+.activity-box--social {
+  background-color: hsl(264, 64%, 52%);
+}
+.activity-box--self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+
+@media (max-width: 375px) {
+  .content {
+    width: 90%;
+    height: 100%;
+    grid-template-columns: unset;
+    grid-template-rows: 200px repeat(6, 140px);
+    margin: 50px 0;
+  }
+  .user-box {
+    grid-row: unset;
+  }
+  .user-box__user {
+    flex-direction: row;
+    align-items: center;
+    height: 70%;
+  }
+  .user-box__user .avatar {
+    width: 60px;
+    height: 60px;
+    margin: 0 15px 0 0;
+  }
+  .user-box__user .report-name span:not(.name) {
+    margin: 0;
+  }
+  .user-box__user .report-name .name {
+    font-size: 28px;
+  }
+  .user-box__timeframes {
+    margin: 20px 30px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .user-box__timeframes .timeframe {
+    margin: 0;
+  }
+  .activity-box img:not(.ellipsis) {
+    bottom: 60%;
+    left: 70%;
+  }
+  .activity-box__board {
+    height: 75%;
+    padding: 20px;
+  }
+  .activity-box__board .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .activity-box__board .time {
+    flex-direction: row;
+    align-items: center;
+  }
+  .activity-box__board .time .current {
+    font-size: 28px;
+    margin: 0;
+  }
+  .activity-box__board .time .previous {
+    margin-left: auto;
+  }
+}/*# sourceMappingURL=App.css.map */
